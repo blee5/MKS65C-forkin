@@ -8,16 +8,19 @@
 
 int main()
 {
-    int pid;
+    int pid = 1;
+    int i;
     printf("Forking twice!\n");
-    pid = fork();
-    if (pid < 0)
+    for (i = 0; i < 2; i++)
     {
-        printf("Error %d: %s\n", errno, strerror(errno));
-    }
-    if (pid)
-    {
-        pid = fork();
+        if (pid)
+        {
+            pid = fork();
+        }
+        if (pid < 0)
+        {
+            printf("Error %d: %s\n", errno, strerror(errno));
+        }
     }
 
     if (pid)
