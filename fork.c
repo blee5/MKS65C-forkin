@@ -40,9 +40,9 @@ int main()
             printf("Error %d: %s\n", errno, strerror(errno));
         }
         n = n % 15 + 5;
-        printf("Hello, my PID is %d and I will be sleeping for %d seconds!\n", getpid(), n);
+        printf("[Hello, my PID is %d and I will be sleeping for %d seconds!]\n", getpid(), n);
         sleep(n);
-        printf("My PID is %d and I'm done sleeping, now I'm going to kill myself.\n", getpid());
+        printf("[My PID is %d and I'm done sleeping, now I'm going to kill myself].\n", getpid());
         return n;
     }
 
